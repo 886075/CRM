@@ -15,7 +15,7 @@ function Login() {
         e.preventDefault();
         const user ={email,password}
         console.log(user)
-        const res= await axios.post('http://localhost:5000/api/admin/log',user);
+        const res= await axios.post('https://crm-1backend-we9r.onrender.com/api/admin/log',user);
         console.log(res);
         if(res.data.msg=='success'){
             // window.alert('Login Sucess')
