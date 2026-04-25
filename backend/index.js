@@ -9,11 +9,15 @@ const userRoute = require('./Routes/userRoute');
 const assignRoute = require('./Routes/assignRoute');
 const followupRoute = require('./Routes/followupRoute');
 const otprouter = require('./Routes/otpRouter');
+require('dotenv').config();
 
 const app = express();
-const port = 5000;
 
-mongoose.connect('mongodb://127.0.0.1:27017/crm')
+//
+const port = process.env.PORT || 5000;
+const MONGOURL=process.env.MONGOURL;
+
+mongoose.connect(MONGOURL)
 .then(()=>{
     console.log("connected to mongo db");
 })
